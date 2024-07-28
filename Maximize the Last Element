@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int f(vector<int>& v){
+    int n=v.size();
+    for(int i=0;i<n/2;i++){
+        int size=v.size();
+        int j=0;
+        int min=1e9;
+        int ind;
+        while(j<size-1){
+            int sum=v[j]+v[j+1];
+            if(sum<min){
+                min=sum;
+                ind=j;
+            }
+            j++;
+        }
+        v.erase(v.begin() + ind, v.begin() + ind + 2);
+    }
+    return v[0];
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    vector<int>res;
+    for(int i=0;i<t;i++){
+        int n;
+        cin>>n;
+        vector<int> v;
+        for(int j=0;j<n;j++){
+            int num;
+            cin>>num;
+            v.push_back(num);
+        }
+        int sol=f(v);
+        res.push_back(sol);
+    }
+    for(int k=0;k<res.size();k++){
+        cout<<res[k]<<endl;
+    }
+
+    return 0;
+}
