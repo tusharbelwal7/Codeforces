@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findMinimumTramCapacity(int n, vector<pair<int, int>> stops) {
+    int currentPassengers = 0;
+    int maxCapacity = 0;
+
+    for (int i = 0; i < n; i++) {
+        int a = stops[i].first;  
+        int b = stops[i].second; 
+
+        currentPassengers -= a; 
+        currentPassengers += b;  
+
+        if (currentPassengers > maxCapacity) {
+            maxCapacity = currentPassengers;
+        }
+    }
+
+    return maxCapacity;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<pair<int, int>> stops(n);
+    for (int i = 0; i < n; i++) {
+        cin >> stops[i].first >> stops[i].second;
+    }
+
+    int minCapacity = findMinimumTramCapacity(n, stops);
+    cout << minCapacity << endl;
+
+    return 0;
+}
