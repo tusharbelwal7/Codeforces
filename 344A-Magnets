@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    int res=1;
+    string prev;
+    cin>>prev;
+    for(int i=1;i<t;i++){
+        string num;
+        cin>>num;
+        if(prev[1]==num[0])
+            res++;
+        prev=num;
+    }
+    cout<<res<<endl;
+    return 0;
+}
