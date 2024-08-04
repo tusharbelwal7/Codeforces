@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    vector<int>res;
+    for(int i=0;i<t;i++){
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        int size=4*n;
+        int ac=0,bc=0,cc=0,dc=0;
+        for(int j=0;j<size;j++){
+            if(s[j]=='A'){
+                ac++;
+                if(ac>n)
+                    ac=n;
+            }
+            else if(s[j]=='B'){
+                bc++;
+                if(bc>n)
+                    bc=n;
+            }
+            else if(s[j]=='C'){
+                cc++;
+                if(cc>n)
+                    cc=n;
+            }
+            if(s[j]=='D'){
+                dc++;
+                if(dc>n)
+                    dc=n;
+            }
+        }
+        int sum=ac+bc+cc+dc;
+        res.push_back(sum);
+    }
+    for(int k=0;k<res.size();k++){
+        cout<<res[k]<<endl;
+    }
+
+    return 0;
+}
