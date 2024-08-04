@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int t, h;
+    cin>>t>>h;
+    vector<int>v(t);
+    for(int i=0;i<t;i++){
+        cin>>v[i];
+    }
+    int res=0;
+    for(int j=0;j<v.size();j++){
+        if(v[j]>h)
+            res=res+2;
+        else
+            res++;
+    }
+    cout<<res<<endl;
+    return 0;
+}
