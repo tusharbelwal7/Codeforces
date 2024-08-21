@@ -1,0 +1,29 @@
+#include <iostream>
+#include <map>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    string res="";
+    map<int,int>mpp;
+    for(int i=0;i<s.length();i++){
+        if(s[i]!='+')
+            mpp[s[i]]++;
+    }
+    for(auto i:mpp){
+        while(i.second>0){
+            if(res==""){
+                res+=i.first;    
+            }
+            else{
+                res+='+';
+                res+=i.first;
+            }
+            i.second--;
+        }
+    }
+    cout<<res;
+
+    return 0;
+}
