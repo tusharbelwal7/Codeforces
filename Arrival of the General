@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    int mini=INT_MAX;
+    int maxi=INT_MIN;
+    int minind,maxind;
+    for(int i=0;i<n;i++){
+        if(v[i]>maxi){
+            maxi=v[i];
+            maxind=i;
+        }
+        if(v[i]<=mini){
+            mini=v[i];
+            minind=i;
+        }
+    }
+    int c=0;
+    if(maxind!=0){
+        c=maxind;
+    }
+    if(minind!=n-1){
+        c+=(n-1)-minind;
+    }
+    if(minind<maxind)
+        c--;
+    cout<<c<<endl;
+    return 0;
+}
