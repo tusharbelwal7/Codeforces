@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    vector<int>v;
+    for(int i=0;i<t;i++){
+        int num;
+        cin>>num;
+        int res;
+        if(num%2==0)
+            res=(num/2)-1;
+        else
+            res=num/2;
+        v.push_back(res);
+    }
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<endl;
+    }
+
+    return 0;
+}
