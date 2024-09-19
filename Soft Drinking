@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,k,l,c,d,p,nl,np;
+    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
+    int tdrinks=(l*k)/nl;
+    int tslices=(c*d);
+    int tsalt=p/np;
+    int res=min(tdrinks,min(tslices,tsalt));
+    cout<<res/n;
+
+    return 0;
+}
+
