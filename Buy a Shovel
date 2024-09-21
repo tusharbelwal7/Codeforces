@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int k,n;
+    cin>>k>>n;
+    int res=1;
+    while(true){
+        if((k*res)%10==n || (k*res)%10==0){
+            break;
+        }
+        else
+            res++;
+    }
+    cout<<res;
+
+    return 0;
+}
