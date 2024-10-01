@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    vector<int>res;
+    for(int i=0;i<t;i++){
+        int n;
+        cin>>n;
+        vector<int>v(n);
+        for(int j=0;j<n;j++){
+            cin>>v[j];
+        }
+        int num=v[0];
+        for(int j=1;j<n-1;j++){
+            if(v[j]!=num && num==v[j+1]){
+                res.push_back(j+1);
+                break;
+            }
+            else if(v[j]==num && v[j+1]!=num){
+                res.push_back(j+2);
+                break;
+            }
+            else if(v[j]!=num && v[j+1]!=num){
+                res.push_back(1);
+                break;
+            }
+                
+        }
+    }
+    for(auto i:res)
+        cout<<i<<endl;
+
+    return 0;
+}
