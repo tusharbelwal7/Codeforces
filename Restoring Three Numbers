@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+int main()
+{
+    int n1,n2,n3,n4;
+    cin>>n1>>n2>>n3>>n4;
+    vector<int>v;
+    int maxi=INT_MIN;
+    if(n1>maxi)
+        maxi=n1;
+    if(n2>maxi)
+        maxi=n2;
+    if(n3>maxi)
+        maxi=n3;
+    if(n4>maxi)
+        maxi=n4;
+    if(maxi-n1!=0)
+        v.push_back(maxi-n1);
+    if(maxi-n2!=0)
+        v.push_back(maxi-n2);
+    if(maxi-n3!=0)
+        v.push_back(maxi-n3);
+    if(maxi-n4!=0)
+        v.push_back(maxi-n4);
+    for(int i:v)
+        cout<<i<<" ";
+    return 0;
+}
